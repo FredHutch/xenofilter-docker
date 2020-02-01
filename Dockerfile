@@ -1,6 +1,6 @@
 FROM r-base:3.6.2
 
-RUN apt-get update -y && apt-get install -y curl libcurl4-openssl-dev
+RUN apt-get update -y && apt-get install -y curl libcurl4-openssl-dev libssl-dev libxml2-dev
 
 RUN R -q -e "install.packages('BiocManager', repos='https://cran.r-project.org')"
 RUN R -q -e 'BiocManager::install(c("Rsamtools", "GenomicAlignments", "BiocParallel", "futile.logger", "GenomicRanges", "Homo.sapiens"))'
